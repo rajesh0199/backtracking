@@ -180,14 +180,14 @@
         }
     </pre>
     <p>And finally, here's the recursive backtracking routine to "solve" the binary tree by finding a goal node.</p>
-    <pre>
-        static boolean solvable(BinaryTree node) {
-            /* 1 *if (node == null) return false;
-            /* 2 */  if (node.isGoalNode) return true;
-            /* 3 */  if (solvable(node.leftChild)) return true;
-            /* 4 */  if (solvable(node.rightChild)) return true;
-            /* 5 */  return false;
-            }
+    <pre style="color: blue;">
+        <code>static boolean solvable(BinaryTree node) {</code>
+            /* 1 */  <code>if (node == null) return false;</code>
+            /* 2 */  <code>if (node.isGoalNode) return true;</code>
+            /* 3 */  <code>if (solvable(node.leftChild)) return true;</code>
+            /* 4 */  <code>if (solvable(node.rightChild)) return true;</code>
+            /* 5 */  <code>return false;</code>
+           <code>}</code>
     </pre>
     <p>Here's what the numbered lines are doing:</p>
     <ol type="1">
@@ -394,7 +394,7 @@
          <tr>
              <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
              <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
-             <td bgcolor="#ccc"></td>
+             <td width="44px" bgcolor="#ccc"><img src="" alt=""><br></td>
              <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
              <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
          </tr>
@@ -404,7 +404,7 @@
          <tr>
              <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
              <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
-             <td bgcolor="#ccc"><img src="" alt=""></td>
+             <td width="44px" bgcolor="#ccc"><img src="" alt=""></td>
              <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
              <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
          </tr>
@@ -417,35 +417,98 @@
     <p>For example, you could make the following sequence of moves:</p>
     <table align="center" cellpadding="10px">
         <tr>
-        <th>Starting position:</th> 
+            <td><strong>Starting position:</strong></td>
         <td>
-            <table align="center" border="2px" cellpadding="6px" cellspacing="0px">
-                <tr>
-                    <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
-                    <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
-                    <td bgcolor="#ccc"><img src="" alt=""></td>
-                    <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
-                    <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
-                </tr>
-            </table>
-        </td>
-        </tr>
-    </table>
-    <table align="center" cellpadding="10px">
-        <tr>
-        <th>Black moves ahead:</th>
-        <td>
-            <table align="center" border="2px" cellpadding="6px" cellspacing="0px">
-                <tr>
-                    <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
-                    <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
-                    <td bgcolor="#ccc"><img src="" alt=""></td>
-                    <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
-                    <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
-                </tr>
-            </table>
+        <table align="center" border="1px" cellpadding="6px" cellspacing="0px">
+            <tr>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td width="44px" bgcolor="#ccc"><img src="" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+            </tr> 
+        </table>           
         </td>    
         </tr>
+    <br>
+        <tr>
+            <td><strong>Black moves ahead:</strong></td>
+        <td>
+        <table align="center" border="1px" cellpadding="6px" cellspacing="0px">
+            <tr>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td width="44px" bgcolor="#ccc"><img src="" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+            </tr>
+        </table>            
+        </td>    
+        </tr>
+        <br>
+        <tr>
+            <td><strong>White jumps:</strong></td>
+        <td>
+        <table align="center" border="1px" cellpadding="6px" cellspacing="0px">
+            <tr>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td width="44px" bgcolor="#ccc"><img src="" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+            </tr>  
+        </table>          
+        </td>    
+        </tr>
+        <br>
+        <tr>
+            <td><strong>Black moves ahead:</strong></td>
+        <td>
+        <table align="center" border="1px" cellpadding="6px" cellspacing="0px">
+            <tr>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+                <td width="44px" bgcolor="#ccc"><img src="" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+            </tr>
+        </table>            
+        </td>    
+        </tr>
+        <br>
+        <tr>
+            <td><strong>Black jumps:</strong></td>
+        <td>
+        <table align="center" border="1px" cellpadding="6px" cellspacing="0px">
+            <tr>
+                <td width="44px" bgcolor="#ccc"><img src="" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+            </tr> 
+        </table>           
+        </td> 
+        </tr>       
+        <br>
+        <tr>
+            <td><strong>White moves ahead</strong></td>
+        <td>
+        <table align="center" border="1px" cellpadding="6px" cellspacing="0px">
+            <tr>
+                <td width="44px" bgcolor="#ccc"><img src="" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./black-ball img.gif" alt=""></td>
+                <td bgcolor="#ccc"><img src="./white-ball img.gif" alt=""></td>
+            </tr> 
+        </table>           
+        </td>    
+        </tr>
+        <br>
+    <tr>
+            <td><strong>Stuck!</strong></td>
+    </tr>
     </table>
     <p>Now to the program. The main program will initialize the board, and call a recursive backtracking routine to attempt to solve the puzzle. The backtracking routine will either succeed and print out a winning path, or it will fail, and the main program will have to print out the bad news.</p>
     <p>The backtracking method is named <code>solvable</code> and returns a <code>boolean</code>. In <code>solvable</code> we shall need to check whether we are at a leaf, which in this case means a position from which no further moves are possible. This isn't so easy.</p>
@@ -480,7 +543,7 @@
     </pre>
     <p>Along with <code>canMove</code> and <code>makeMove</code>, we are using methods <code>puzzleSolved</code> and <code>printBoard</code> with meanings that should be obvious.</p>
     <p>Here is some output from the program:</p>
-<pre>
+<pre style="color: blue;">
 16.  <strong style="color: black;" >WHITE  WHITE  WHITE  _____  BLACK  BLACK  BLACK</strong>
 15.  <strong style="color: black;">WHITE  WHITE  WHITE  BLACK  _____  BLACK  BLACK</strong>
 14.  <strong style="color: black;">WHITE  WHITE  _____  BLACK  WHITE  BLACK  BLACK</strong>
